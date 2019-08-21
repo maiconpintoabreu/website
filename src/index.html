@@ -1,8 +1,42 @@
 <!DOCTYPE html>
+
 <head>
     <title>Maicon Santana - DevOps Nodejs/Java/Angular</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="vendors/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/index.css" rel="stylesheet">
 </head>
+
 <body>
+    <div class="">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" *ngIf="publicMenu">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav justify-content-end  nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" title="Git" target="_blank" href="https://github.com/maiconpintoabreu">
+                                GitHub
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" title="Git" target="_blank" href="https://kupping.maicondev.com">
+                                Kupping
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="router-outlet">
+            <router-outlet class="router-outlet"></router-outlet>
+        </div>
+    </div>
+
     Comming soon...
 </body>
 <footer>
