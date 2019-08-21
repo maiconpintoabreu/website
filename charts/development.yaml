@@ -1,0 +1,39 @@
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "website"
+  namespace: "default"
+  labels:
+    app: "website"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "website"
+  template:
+    metadata: 
+      labels:
+        app: "website"
+    spec:
+      containers:
+      - name: "website"
+        image: gcr.io/kupping/github.com/maiconpintoabreu/website
+
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      # - env:
+      #   - name: KUPPING_BACKEND_URL
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         key: KUPPING_BACKEND_URL
+      #         name: kupping-frontend-config
+      #   - name: KUPPING_FRONTEND_URL
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         key: KUPPING_FRONTEND_URL
+      #         name: kupping-frontend-config

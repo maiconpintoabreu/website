@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/kupping/github.com/maiconpintoabreu/website
+    context: .
+deploy:
+  kubectl:
+    manifests:
+    # - charts/configmap.yaml
+    - charts/development.yaml
+    - charts/service.yaml

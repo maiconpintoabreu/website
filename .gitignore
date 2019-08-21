@@ -1,0 +1,4 @@
+nginx/fullchain.pem
+nginx/privkey.pem
+nginx/kupping/fullchain.pem
+nginx/kupping/privkey.pem
