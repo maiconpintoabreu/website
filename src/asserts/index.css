@@ -1,3 +1,23 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+.my-photo {
+    height: 15rem;
+}
+.first-screen {
+    height: 100vh;
+    min-height: 50rem;
+    background-color: #42352d;
+    color: white;
+}
+.nav-top-menu{
+    position: fixed;
+    background-color: #42352d;
+}
+.nav-top-menu a{
+    color: white;
+}
+.cv-frame {
+    width: 100vw;
+    height: 100hv;
+}
