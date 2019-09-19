@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: website
+  namespace: default
+spec:
+  gateways:
+  - k3s-gateway
+  hosts:
+  - 'maicondev.com'
+  - 'www.maicondev.com'
+  tls:
+  - match:
+    - port: 443
+      sni_hosts:
+      - 'maicondev.com'
+      - 'www.maicondev.com'
+    route:
+    - destination:
+        host: website-service
+        port:
+          number: 443

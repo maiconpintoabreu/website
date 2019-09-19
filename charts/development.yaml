@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: "website"
-        image: gcr.io/kupping/github.com/maiconpintoabreu/website
+        image: eu.gcr.io/k3s-tests/website
 
         resources:
           requests:

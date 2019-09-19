@@ -2,7 +2,7 @@ apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
-  - image: gcr.io/kupping/github.com/maiconpintoabreu/website
+  - image: eu.gcr.io/k3s-tests/website
     context: .
 deploy:
   kubectl:
@@ -10,3 +10,5 @@ deploy:
     # - charts/configmap.yaml
     - charts/development.yaml
     - charts/service.yaml
+    - charts/gateway.yaml
+    - charts/virtualservice.yaml
