@@ -1,0 +1,49 @@
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: {{ .Release.Name }}
+  namespace: "default"
+  labels:
+    app: {{ template "website-helm.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata: 
+      labels:
+        app: {{ template "website-helm.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image }}
+          imagePullPolicy: {{ .Values.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          resources:
+{{if .Values.resources.requests}}
+            requests:
+              memory: {{ .Values.resources.requests.memory }}
+              cpu: {{ .Values.resources.requests.cpu }}
+{{end}}              
+{{if .Values.resources.limits}}  
+            limits:
+              memory: {{ .Values.resources.limits.memory }}
+              cpu: {{ .Values.resources.limits.cpu }}
+{{end}}
+      # - env:
+      #   - name: KUPPING_BACKEND_URL
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         key: KUPPING_BACKEND_URL
+      #         name: kupping-frontend-config
+      #   - name: KUPPING_FRONTEND_URL
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         key: KUPPING_FRONTEND_URL
+      #         name: kupping-frontend-config

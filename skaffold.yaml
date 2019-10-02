@@ -7,8 +7,8 @@ build:
 deploy:
   kubectl:
     manifests:
-    # - charts/configmap.yaml
-    - charts/development.yaml
-    - charts/service.yaml
-    - charts/gateway.yaml
-    - charts/virtualservice.yaml
+    # - charts/kubectl/configmap.yaml
+    - charts/kubectl/development.yaml
+    - charts/kubectl/service.yaml
+    # - charts/kubectl/gateway.yaml
+    - charts/kubectl/virtualservice.yaml
