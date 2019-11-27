@@ -15,6 +15,7 @@ spec:
     - 'maicondev.com'
     - 'www.maicondev.com'
     - 'kupping.maicondev.com'
+    - 'kuppingbackend.maicondev.com'
     tls:
       httpsRedirect: true
   - port:
@@ -25,5 +26,6 @@ spec:
     - 'maicondev.com'
     - 'www.maicondev.com'
     - 'kupping.maicondev.com'
+    - 'kuppingbackend.maicondev.com'
     tls:
       mode: PASSTHROUGH
