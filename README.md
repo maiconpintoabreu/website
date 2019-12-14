@@ -1,3 +1,4 @@
+![](https://github.com/maiconpintoabreu/Kupping/workflows/Build%20and%20Deploy%20with%20Skaffold/badge.svg)
 # [Personal Website](https://maicondev.com)
 Website with my experiences and projects
 
@@ -13,3 +14,7 @@ Website with my experiences and projects
 * [Android Source](https://github.com/maiconpintoabreu/Kupping-Mobile) 
 ## CV
 [Here](https://maicondev.com/asserts/CvMaicon.pdf) you will find my experiences in a PDF file.
+
+## GPG - Secrets
+
+gpg --symmetric --cipher-algo AES256 "FILENAME.*"
