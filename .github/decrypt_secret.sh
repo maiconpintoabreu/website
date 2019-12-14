@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir $HOME/.kube && mkdir $HOME/.ssh && mkdir certs
+mkdir $HOME/.kube && mkdir $HOME/.ssh && mkdir nginx
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
 --output charts/templates/configmap.yaml secrets/configmap.yaml.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
@@ -7,6 +7,6 @@ gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
 
 # move this to a kubernetes secret
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
---output certs/fullchain.pem secrets/fullchain.pem.gpg
+--output nginx/fullchain.pem secrets/fullchain.pem.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
---output certs/privkey.pem secrets/privkey.pem.gpg
+--output nginx/privkey.pem secrets/privkey.pem.gpg
