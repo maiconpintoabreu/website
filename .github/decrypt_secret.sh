@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir $HOME/.kube && mkdir $HOME/.ssh && mkdir nginx
+mkdir -p $HOME/.kube && mkdir -p $HOME/.ssh && mkdir -p nginx
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
 --output charts/templates/configmap.yaml secrets/configmap.yaml.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="${SAFE_KEY}" \
