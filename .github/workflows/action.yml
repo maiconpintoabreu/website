@@ -33,9 +33,9 @@ jobs:
         curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
         chmod +x skaffold
         sudo mv skaffold /usr/local/bin
+        gcloud auth activate-service-account --key-file=tempKeyFile.json
+        gcloud auth configure-docker
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
-        gcloud auth activate-service-account --key-file=tempKeyFile.json
-        gcloud auth configure-docker
         skaffold run
