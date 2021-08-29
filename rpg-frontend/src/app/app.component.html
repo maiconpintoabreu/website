@@ -1,0 +1,46 @@
+
+<div *ngIf="loggedIn">
+  <mat-toolbar color="warm" class="rpg-topmenu">
+    <mat-button routerLink="/" routerLinkActive="active">
+      <mat-icon>games</mat-icon>
+      <span>MMORPG Sandbox Project</span>
+    </mat-button>
+    <span class="rpg-spacer"></span>
+    <mat-button [matMenuTriggerFor]="menuLoggedin" aria-label="Logged in menu">
+      <mat-icon>more_vert</mat-icon>
+      <span>{{userName}}</span>
+    </mat-button>
+    <mat-menu #menuLoggedin="matMenu">
+      <button mat-menu-item  routerLink="/account" routerLinkActive="active">
+        <mat-icon>person</mat-icon>
+        <span>Account</span>
+      </button>
+      <button mat-menu-item routerLink="/logout" routerLinkActive="active">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</div>
+<div *ngIf="!loggedIn">
+  <mat-toolbar color="warm" class="rpg-topmenu">
+    <mat-button routerLink="/" routerLinkActive="active">
+      <mat-icon>games</mat-icon>
+      <span>MMORPG Sandbox Project</span>
+    </mat-button>
+    <span class="rpg-spacer"></span>
+    <mat-button   aria-label="Logged in menu" routerLink="/login" routerLinkActive="active">
+      <mat-icon>login</mat-icon>
+      <span>Log in</span>
+    </mat-button>
+    <mat-button  aria-label="Logged in menu" routerLink="/create" routerLinkActive="active">
+      <mat-icon>add</mat-icon>
+      <span>Create Account</span>
+    </mat-button>
+  </mat-toolbar>
+</div>
+<mat-sidenav-container>
+  <mat-sidenav-content class="rpg-body">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
